@@ -1,0 +1,10 @@
+{
+  "json-yaml-schema-selector.additionalSchemas": [
+    "/Users/brian.malehorn/concourse-pipeline-schema-json/concourse-pipeline.schema.json"
+  ],
+  "yaml.schemas": {
+    "/Users/brian.malehorn/concourse-pipeline-schema-json/concourse-pipeline.schema.json": [
+      "*.yaml"
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "$id": "file:///concourse-pipeline.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "pipeline": {
+      "type": "object",
+      "title": "Pipeline",
+      "properties": {
+        "$schema": {
+          "type": "string",
+          "title": "JSON Schema",
+          "default": "file:///concourse-pipeline.schema.json"
+        },
+        "jobs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/job"
+          }
+        }
+      }
+    },
+    "job": {
+      "type": "object",
+      "title": "Job",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Name"
+        },
+        "plan": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalItems": false,
+            "properties": {
+              "task": {
+                "type": "string"
+              },
+              "config": {
+                "type": "object",
+                "properties": {
+                  "platform": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "title": "Concourse Pipeline",
+  "description": "Pipeline configuration file for concourse CI tool",
+  "$ref": "#/definitions/pipeline"
+}
